@@ -1,11 +1,14 @@
 ﻿using PizzariaMVC.Models;
+using System;
 using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 
-namespace IngressoMVC.Models.ViewModels.RequestDTO
+namespace Pizzaria.Models.ViewModels.RequestDTO
 {
-    public class PostPizzaDropdownDTO
+    public class PostPizzaDropdown
     {
-        public PostPizzaDropdownDTO()
+        public PostPizzaDropdown()
         {
             Sabores = new List<Sabor>();
             Tamanhos = new List<Tamanho>();
