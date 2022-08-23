@@ -42,7 +42,7 @@ namespace Pizzaria.Controllers
             Pizza pizza = new Pizza
                 (
                     pizzaDTO.Nome,
-                    pizzaDTO.FotoURL,
+                    pizzaDTO.ImageURL,
                     pizzaDTO.Preco,
                     pizzaDTO.TamanhoId
                 );
@@ -72,7 +72,7 @@ namespace Pizzaria.Controllers
             var response = new PostPizzaDTO()
             {
                 Nome = result.Nome,
-                FotoURL = result.ImageURL,
+                ImageURL = result.ImageURL,
                 Preco = result.Preco,
                 SaboresId = result.PizzasSabores.Select(x => x.SaborId).ToList(),
 
@@ -95,7 +95,7 @@ namespace Pizzaria.Controllers
 
             result.AtualizarDados
                 (
-                    pizzaDto.FotoURL,
+                    pizzaDto.ImageURL,
                     pizzaDto.Preco,
                     pizzaDto.Nome,
                     pizzaDto.TamanhoId

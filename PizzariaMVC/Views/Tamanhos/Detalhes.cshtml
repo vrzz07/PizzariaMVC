@@ -1,1 +1,62 @@
-﻿<h1>Detalhes</h1>
+﻿@model Tamanho
+
+<div class="row align-items-center">
+    <div class="col-md-8 offset-md-4">
+        <div class="col-md-6">
+            <h1>@Model.Nome</h1>
+        </div>
+
+
+        @if (@Model.Pizzas.Count > 0)
+        {
+            <div class="row ">
+                <div id="carouselExampleControls" class="carousel slide col-md-6" data-ride="carousel">
+                    <div class="carousel-inner">
+                        @foreach (var pizzas in @Model.Pizzas)
+                        {
+                            if (pizzas == @Model.Pizzas.First())
+                            {
+                                <div class="carousel-item active">
+                                    <a asp-controller="Pizzas" asp-action="Detalhes" asp-route-id="@pizzas.Id">
+                                        <img src="@pizzas.ImageURL" class="d-block w-100">
+                                    </a>
+                                </div>
+                            }
+                            else
+                            {
+                                <div class="carousel-item">
+                                    <a asp-controller="Filmes" asp-action="Detalhes" asp-route-id="@pizzas.Id">
+                                        <img src="@pizzas.ImageURL" class="d-block w-100">
+                                    </a>
+                                </div>
+                            }
+                        }
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-target="#carouselExampleControls" data-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-target="#carouselExampleControls" data-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Next</span>
+                    </button>
+                </div>
+
+            </div>
+            <br />
+            <div class="col-md-3">
+                <a class="btn btn-outline-secondary" asp-action="Index">Listar Tamanhos</a>
+            </div>
+        }
+        else
+        {
+            <h1>Sem Tamanhos cadastrados para @Model.Nome</h1>
+            <a class="btn btn-success" asp-action="Atualizar">
+                <i class="fa-solid fa-pen-to-square"></i>
+                Editar
+            </a>
+
+        }
+        @* Fim Carrossel*@
+    </div>
+</div>

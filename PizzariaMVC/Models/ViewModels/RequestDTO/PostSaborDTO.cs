@@ -14,6 +14,6 @@ namespace PizzariaMVC.Models.ViewModels.RequestDTO
 
         [Display(Name = "Imagem")]
         [Required(ErrorMessage = "A imagem é obrigatória!")]
-        public string FotoURL { get; set; }
+        public string ImageURL { get; set; }
     }
 }

@@ -1,1 +1,49 @@
-﻿<h1>Index</h1>
+﻿@model IEnumerable<Tamanho>
+
+@{
+    ViewData["Title"] = "Tamanhos";
+}
+
+<partial name="_NewItem" model="nameof(Tamanho)" />
+
+<div class="row" id="index">
+    <div class="col-md-10 offset-md-1">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Ações</th>
+                    <th>@Html.DisplayNameFor(model => model.Nome)</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var tamanho in Model)
+                {
+                    <tr>
+                        <td>
+                            <div class="d-flex flex-column">
+                                <a class="btn btn-primary" asp-action="Atualizar" asp-route-id="@tamanho.Id">
+                                    <i class="fa-solid fa-pen-to-square"></i>
+                                    Editar
+                                </a>
+
+                                <a class="btn btn-secondary mt-1" asp-action="Detalhes" asp-route-id="@tamanho.Id">
+                                    <i class="fa-solid fa-eye"></i>
+                                    Ver
+                                </a>
+
+                                <a class="btn btn-danger mt-1" asp-action="Deletar" asp-route-id="@tamanho.Id">
+                                    <i class="fa-solid fa-trash-can"></i>
+                                    Excluir
+                                </a>
+                            </div>
+                        </td>
+                        <td class="align-middle">
+                        </td>
+                        <td class="align-middle">@tamanho.Nome</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+
+    </div>
+</div>
