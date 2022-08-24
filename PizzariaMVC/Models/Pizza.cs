@@ -29,11 +29,11 @@ namespace PizzariaMVC.Models
         public int TamanhoId { get; set; }
 
 
-        public void AtualizarDados(string nome, decimal preco, string imageUrl, int tamanhoid)
+        public void AtualizarDados(string imageUrl, decimal preco, string nome, int tamanhoid)
         {
-            Nome = nome;
-            Preco = preco;
             ImageURL = imageUrl;
+            Preco = preco;
+            Nome = nome;
             TamanhoId = tamanhoid;
             DataAlteracao = DateTime.Now;
         }

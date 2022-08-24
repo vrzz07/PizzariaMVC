@@ -11,9 +11,5 @@ namespace PizzariaMVC.Models.ViewModels.RequestDTO
         [Display(Name = "Nome")]
         [Required(ErrorMessage = "O Nome é obrigatório!")]
         public string Nome { get; set; }
-
-        [Display(Name = "Imagem")]
-        [Required(ErrorMessage = "A imagem é obrigatória!")]
-        public string ImageURL { get; set; }
     }
 }

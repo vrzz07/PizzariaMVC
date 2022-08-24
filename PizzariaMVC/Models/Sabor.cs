@@ -8,11 +8,10 @@ namespace PizzariaMVC.Models
 {
     public class Sabor : IEntidade
     {
-        public Sabor(string imageURL, string nome)
+        public Sabor(string nome)
         {
             DataAlteracao = DataCadastro;
             DataCadastro = DateTime.Now;
-            ImageURL = imageURL;
             Nome = nome;
         }
 
@@ -23,10 +22,9 @@ namespace PizzariaMVC.Models
         public string Nome { get; set; }
         public List<PizzaSabor> PizzasSabores { get; set; }
 
-        public void AtualizarDados(string nome, string imageURL)
+        public void AtualizarDados(string nome)
         {
             Nome = nome;
-            ImageURL = imageURL;
             DataAlteracao = DateTime.Now;
         }
     }

@@ -1,55 +1,55 @@
 ﻿@model IEnumerable<Pizza>
 
 @{
-    ViewData["Title"] = "Lista de Pizzas";
+    ViewData["Title"] = "Pizzas";
 }
 
 <partial name="_NewItem" model="nameof(Pizza)" />
+<div class="row" id="index">
+    <div class="col-md-10 offset-md-1">
 
-<div class="row">
-    @foreach (var item in Model)
-    {
-        <div class="col-md-4 col-xs-6 border-primary mb-3">
-            <div class="card mb-3" style="max-width: 540px;">
-                <div class="row g-0">
-                    <div class="col-md-12">
-                        <div class="card-header text-white bg-info">
-                            <p class="card-text">
-                                <h5 class="card-title">
-                                    @item.Nome
-                                </h5>
-                            </p>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <a asp-action="Detalhes" asp-route-id="@item.Id"><img src="@item.ImageURL" width="100%" alt="@item.Nome"></a>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="card-body">
-                            <p class="card-text ">
-                                <b>Situação: </b>
-                                <span class="badge bg-primary text-white">Disponível</span>
-                            </p>
 
-                        </div>
-                    </div>
-                    <div class="col-md-12">
-                        <div class="card-footer ">
-                            <p class="card-text">
-                                <a class="btn btn-outline-primary float-right" asp-action="Detalhes" asp-route-id="@item.Id">
-                                    <i class="fa-solid fa-eye"></i> Detalhes
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Ações</th>
+
+                    <th>@Html.DisplayNameFor(model => model.ImageURL)</th>
+                    <th>@Html.DisplayNameFor(model => model.Nome)</th>
+
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var sabor in Model)
+                {
+
+                    <tr>
+                        <td>
+                            <div class="d-flex flex-column">
+                                <a class="btn btn-primary" asp-action="Atualizar" asp-route-id="@sabor.Id">
+                                    <i class="fa-solid fa-pen-to-square"></i>
+                                    Editar
                                 </a>
-                                <a class="btn btn-success text-white"
-                                   asp-controller="Pedidos"
-                                   asp-action="AdicionarCarrinho"
-                                   asp-route-id="@item.Id">
-                                    <i class="fa-solid fa-cart-arrow-down"></i> Adicionar
+
+                                <a class="btn btn-secondary mt-1" asp-action="Detalhes" asp-route-id="@sabor.Id">
+                                    <i class="fa-solid fa-eye"></i>
+                                    Ver
                                 </a>
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    }
+
+                                <a class="btn btn-danger mt-1" asp-action="Deletar" asp-route-id="@sabor.Id">
+                                    <i class="fa-solid fa-trash-can"></i>
+                                    Excluir
+                                </a>
+                            </div>
+                        </td>
+                        <td class="align-middle">
+                            <img src="@sabor.ImageURL" style="max-width:100px" alt="@sabor.Nome">
+                        </td>
+                        <td class="align-middle">@sabor.Nome</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+
+    </div>
 </div>

@@ -41,8 +41,8 @@ namespace Pizzaria.Controllers
 
             Pizza pizza = new Pizza
                 (
-                    pizzaDTO.Nome,
                     pizzaDTO.ImageURL,
+                    pizzaDTO.Nome,
                     pizzaDTO.Preco,
                     pizzaDTO.TamanhoId
                 );

@@ -45,7 +45,7 @@ namespace PizzariaMVC.Controllers
             if (!ModelState.IsValid)
                 return View(saborDto);
 
-            Sabor sabor = new Sabor(saborDto.Nome, saborDto.ImageURL);
+            Sabor sabor = new Sabor(saborDto.Nome);
             _context.Sabores.Add(sabor);
             _context.SaveChanges();
 
@@ -73,7 +73,7 @@ namespace PizzariaMVC.Controllers
             if (!ModelState.IsValid)
                 return View(sabor);
 
-            sabor.AtualizarDados(saborDto.Nome, saborDto.ImageURL);
+            sabor.AtualizarDados(saborDto.Nome);
 
             _context.Update(sabor);
             _context.SaveChanges();

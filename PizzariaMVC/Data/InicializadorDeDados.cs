@@ -32,7 +32,7 @@ namespace PizzariaMVC.Data
                 {
                     context.Sabores.AddRange(new List<Sabor>()
                     {
-                        new Sabor("https://www.papodegordo.com.br/wp-content/uploads/2010/02/frangodesfiado2.jpg", "Frango"),
+                        new Sabor("Frango"),
                     });
                 }
 

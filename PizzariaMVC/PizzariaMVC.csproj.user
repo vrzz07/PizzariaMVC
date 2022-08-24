@@ -5,5 +5,6 @@
   </PropertyGroup>
   <PropertyGroup>
     <ActiveDebugProfile>PizzariaMVC</ActiveDebugProfile>
+    <NameOfLastUsedPublishProfile>C:\Users\gabriel.vmalta\source\repos\PizzariaMVC\PizzariaMVC\Properties\PublishProfiles\VaruzzaPizzariaMVC - Web Deploy.pubxml</NameOfLastUsedPublishProfile>
   </PropertyGroup>
 </Project>

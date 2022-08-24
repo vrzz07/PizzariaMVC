@@ -6,7 +6,6 @@
             <h1>@Model.Nome</h1>
         </div>
 
-
         @if (@Model.Pizzas.Count > 0)
         {
             <div class="row ">
@@ -51,12 +50,6 @@
         else
         {
             <h1>Sem Tamanhos cadastrados para @Model.Nome</h1>
-            <a class="btn btn-success" asp-action="Atualizar">
-                <i class="fa-solid fa-pen-to-square"></i>
-                Editar
-            </a>
-
         }
-        @* Fim Carrossel*@
     </div>
 </div>

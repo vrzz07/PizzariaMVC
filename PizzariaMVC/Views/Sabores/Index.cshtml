@@ -1,35 +1,30 @@
 ﻿@model IEnumerable<Sabor>
 
-@{
-    ViewData["Title"] = "Sabores";
-}
-
 <partial name="_NewItem" model="nameof(Sabor)" />
-<link rel="stylesheet" href="~/css/site.css" />
-<div class="row" id="index">
+
+<div class="row">
     <div class="col-md-10 offset-md-1">
 
         <table class="table table-striped">
             <thead>
                 <tr>
                     <th>Ações</th>
-                    <th>@Html.DisplayNameFor(model => model.ImageURL)</th>
                     <th>@Html.DisplayNameFor(model => model.Nome)</th>
-
                 </tr>
             </thead>
             <tbody>
                 @foreach (var sabor in Model)
                 {
+
                     <tr>
                         <td>
                             <div class="d-flex flex-column">
-                                <a class="btn btn-primary" asp-action="Atualizar" asp-route-id="@sabor.Id">
+                                <a class="btn btn-success" asp-action="Atualizar" asp-route-id="@sabor.Id">
                                     <i class="fa-solid fa-pen-to-square"></i>
                                     Editar
                                 </a>
 
-                                <a class="btn btn-secondary mt-1" asp-action="Detalhes" asp-route-id="@sabor.Id">
+                                <a class="btn btn-primary mt-1" asp-action="Detalhes" asp-route-id="@sabor.Id">
                                     <i class="fa-solid fa-eye"></i>
                                     Ver
                                 </a>
@@ -41,12 +36,11 @@
                             </div>
                         </td>
                         <td class="align-middle">
-                            <img src="@sabor.ImageURL" style="max-width:100px" alt="@sabor.Nome">
-                        </td>
                         <td class="align-middle">@sabor.Nome</td>
                     </tr>
                 }
             </tbody>
         </table>
+
     </div>
 </div>
